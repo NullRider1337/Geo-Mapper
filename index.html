@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>PhotoGeo Mapper</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>PhotoGeo Mapper</h1>
+<p>Upload ein Foto, um EXIF GPS Daten auszulesen.</p>
+
+<form method="POST" enctype="multipart/form-data">
+    <input type="file" name="image" accept="image/jpeg">
+    <button type="submit">Upload</button>
+</form>
+
+{% if filename %}
+    <h2>Ergebnis für: {{ filename }}</h2>
+{% endif %}
+
+{% if gps_data %}
+    <div class="result">
+        <p><strong>Latitude:</strong> {{ gps_data.lat }}</p>
+        <p><strong>Longitude:</strong> {{ gps_data.lon }}</p>
+    </div>
+
+    <p>Koordinaten können in jedem Kartenservice eingesehen werden.</p>
+{% elif filename %}
+    <p class="error">Keine GPS-Daten gefunden.</p>
+{% endif %}
+
+</body>
+</html>
