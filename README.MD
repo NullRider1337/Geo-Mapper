@@ -34,7 +34,7 @@ twitter/X
 @NullRider1337
 mail
 nullrider1337(at)gmail.com
-Mein Blog https://nullrider1337.blogspot.com/
+Mein Blog https://rider2ba.blogspot.com/
 
 
 
